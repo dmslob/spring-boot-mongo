@@ -6,5 +6,5 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 
 public interface PetRepository extends MongoRepository<Pet, String> {
 
-    Pet findById(ObjectId _id);
+    Pet findById(ObjectId id);
 }

@@ -6,7 +6,7 @@ import org.springframework.data.annotation.Id;
 public class Pet {
 
     @Id
-    public ObjectId _id;
+    public ObjectId id;
 
     private String name;
     private String species;
@@ -15,8 +15,8 @@ public class Pet {
     public Pet() {
     }
 
-    public Pet(ObjectId _id, String name, String species, String breed) {
-        this._id = _id;
+    public Pet(ObjectId id, String name, String species, String breed) {
+        this.id = id;
         this.name = name;
         this.species = species;
         this.breed = breed;
@@ -24,11 +24,11 @@ public class Pet {
 
     // ObjectId needs to be converted to string
     public String getId() {
-        return _id.toHexString();
+        return id.toHexString();
     }
 
     public void setId(ObjectId _id) {
-        this._id = _id;
+        this.id = _id;
     }
 
     public String getName() {
