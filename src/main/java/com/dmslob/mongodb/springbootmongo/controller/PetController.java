@@ -9,15 +9,21 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 @RestController
 @RequestMapping("/pets")
 public class PetController {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(PetController.class);
 
     @Autowired
     private PetRepository repository;
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public List<Pet> getPets() {
+        LOGGER.info("getting all pets");
         return repository.findAll();
     }
 
